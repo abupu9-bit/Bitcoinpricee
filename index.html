@@ -228,6 +228,69 @@ w[q].push(["_mgc.load"])
 })(window,"_mgq");
 </script>
 </div>
+<div style="max-width:500px;margin:50px auto;padding:20px;background:#0f172a;border-radius:10px;text-align:center;">
+
+<h3 style="margin-bottom:10px;">Support CryptoKita</h3>
+
+<p style="font-size:13px;opacity:0.8;margin-bottom:20px;">
+If this Bitcoin dashboard helps you, you can support the project with a small crypto tip.
+</p>
+
+<div style="display:flex;justify-content:center;gap:20px;flex-wrap:wrap;">
+
+<!-- BTC -->
+
+<div style="background:#020617;padding:12px;border-radius:8px;width:200px;">
+
+<b>BTC</b>
+
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=bc1qsrvsy2p3540d48kdel6huj4984332kefmsd99t" style="margin:8px 0;">
+
+<div id="btc-address" style="font-size:11px;word-break:break-all;">
+bc1qsrvsy2p3540d48kdel6huj4984332kefmsd99t
+</div>
+
+<button onclick="copyBTC()" style="margin-top:6px;font-size:11px;padding:5px 10px;background:#f7931a;border:none;border-radius:5px;color:white;cursor:pointer;">
+Copy
+</button>
+
+</div>
+
+<!-- BNB -->
+
+<div style="background:#020617;padding:12px;border-radius:8px;width:200px;">
+
+<b>BNB</b>
+
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=0x992F05564dBEb7855d60B526C561016BbB44cbA7" style="margin:8px 0;">
+
+<div id="bnb-address" style="font-size:11px;word-break:break-all;">
+0x992F05564dBEb7855d60B526C561016BbB44cbA7
+</div>
+
+<button onclick="copyBNB()" style="margin-top:6px;font-size:11px;padding:5px 10px;background:#f3ba2f;border:none;border-radius:5px;color:black;cursor:pointer;">
+Copy
+</button>
+
+</div>
+
+</div>
+
+<p id="copy-msg" style="font-size:12px;margin-top:10px;"></p>
+
+</div>
+
+<script>
+function copyBTC(){
+navigator.clipboard.writeText("bc1qsrvsy2p3540d48kdel6huj4984332kefmsd99t");
+document.getElementById("copy-msg").innerHTML="BTC copied 👍";
+}
+
+function copyBNB(){
+navigator.clipboard.writeText("0x992F05564dBEb7855d60B526C561016BbB44cbA7");
+document.getElementById("copy-msg").innerHTML="BNB copied 👍";
+}
+</script>
 
 <div class="footer-info">
 
