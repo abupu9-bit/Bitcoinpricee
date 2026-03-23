@@ -193,7 +193,7 @@ Start Trading Bitcoin Now
 <script>(function(w,q){w[q]=w[q]||[];w[q].push(["_mgc.load"])})(window,"_mgq");</script>
 </div>
 
-<!-- CHART FIX -->
+<!-- CHART -->
 <div class="chart-section">
 <h2>Bitcoin Live Chart</h2>
 
@@ -236,11 +236,29 @@ If this helps, support with crypto tip
 
 <div class="footer-info">
 <p>Real-time BTC price, calculator & chart powered by CoinGecko & TradingView.</p>
+
+<p>
+Learn more crypto insights at 
+<a href="https://www.cryptokita.com" target="_blank" style="color:#38bdf8;">CryptoKita</a>
+</p>
+
+<p>Disclaimer: Informational only, not financial advice.</p>
 </div>
 
 </div>
 
 <script>
+function setShareLinks(){
+let url=encodeURIComponent(window.location.href);
+let text=encodeURIComponent("Check Bitcoin price & profit calculator here!");
+
+document.getElementById("shareX").href=
+"https://x.com/intent/tweet?text="+text+"&url="+url;
+
+document.getElementById("shareFB").href=
+"https://www.facebook.com/sharer/sharer.php?u="+url;
+}
+
 function copyBTC(){
 navigator.clipboard.writeText(document.getElementById("btc-address").innerText);
 document.getElementById("copy-msg").innerText="BTC copied!";
@@ -276,10 +294,7 @@ document.getElementById("output").innerHTML=
 "Value: "+val.toLocaleString()+"<br>"+
 "<span class='"+(profit>=0?"profit":"loss")+"'>P/L: "+profit.toLocaleString()+"</span>";
 
-let url=window.location.href;
-
-document.getElementById("shareX").href="https://x.com/intent/tweet?url="+url;
-document.getElementById("shareFB").href="https://www.facebook.com/sharer/sharer.php?u="+url;
+setShareLinks();
 }
 
 async function fetchBTC(){
@@ -292,6 +307,7 @@ document.getElementById("btcIdr").innerText="Rp "+d.bitcoin.idr.toLocaleString()
 
 fetchBTC();
 setInterval(fetchBTC,60000);
+setShareLinks();
 </script>
 
 <script src="https://s3.tradingview.com/tv.js"></script>
