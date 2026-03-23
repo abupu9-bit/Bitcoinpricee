@@ -3,170 +3,136 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Bitcoin Live Price & Profit Calculator</title>
-<meta name="description" content="Bitcoin Live Price & Profit Calculator. Check real-time BTC price, convert BTC to USD, and calculate your Bitcoin profit instantly with our simple crypto calculator.">
+
+<meta name="description" content="Bitcoin Live Price & Profit Calculator. Real-time BTC price in USD & IDR, plus an easy crypto profit calculator.">
+
 <link rel="canonical" href="https://bitcoinprice.web.id/">
 <link rel="icon" href="https://raw.githubusercontent.com/abupu9-bit/Bitcoinpricee/main/favicon-32x32.png">
-<link rel="shortcut icon" href="https://raw.githubusercontent.com/abupu9-bit/Bitcoinpricee/main/favicon-32x32.png">
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-<!-- MGID LOADER -->
 <script src="https://jsc.mgid.com/site/1083177.js" async></script>
 
 <style>
 body{
-  margin:0;
-  font-family:'Inter',sans-serif;
-  background:linear-gradient(135deg,#0f172a,#1e293b);
-  color:#fff;
+margin:0;
+font-family:'Inter',sans-serif;
+background:linear-gradient(135deg,#0f172a,#1e293b);
+color:#fff;
 }
 
 .container{
-  max-width:900px;
-  margin:50px auto;
-  padding:25px;
+max-width:900px;
+margin:50px auto;
+padding:25px;
 }
 
 h1{
-  text-align:center;
-  font-size:32px;
-  font-weight:700;
-  background:linear-gradient(90deg,#facc15,#f97316);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
+text-align:center;
+font-size:32px;
+background:linear-gradient(90deg,#facc15,#f97316);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
 h2{
-  text-align:center;
-  margin:50px 0 25px;
+text-align:center;
+margin:40px 0 15px;
 }
 
 .card{
-  background:rgba(255,255,255,0.05);
-  backdrop-filter:blur(14px);
-  border-radius:18px;
-  padding:30px;
-  margin-top:25px;
-  box-shadow:0 15px 40px rgba(0,0,0,0.5);
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(14px);
+border-radius:18px;
+padding:30px;
+margin-top:25px;
 }
 
 .price-box{
-  text-align:right;
-  font-size:22px;
-  font-weight:700;
-  margin-bottom:10px;
+text-align:right;
+font-size:22px;
+font-weight:700;
 }
 
 .small{
-  text-align:right;
-  font-size:12px;
-  opacity:0.6;
+text-align:right;
+font-size:12px;
+opacity:0.6;
 }
 
 label{
-  font-size:13px;
-  margin-top:18px;
-  display:block;
-  opacity:0.8;
+display:block;
+margin-top:15px;
+font-size:13px;
+opacity:0.8;
 }
 
 input,select{
-  width:100%;
-  padding:14px;
-  margin-top:8px;
-  border-radius:12px;
-  border:none;
-  font-size:16px;
-  text-align:right;
-  font-weight:600;
-}
-
-input:focus,select:focus{
-  box-shadow:0 0 0 2px #facc15;
-  outline:none;
+width:100%;
+padding:14px;
+margin-top:8px;
+border-radius:12px;
+border:none;
+font-size:16px;
+text-align:right;
+font-weight:600;
 }
 
 .calc-btn{
-  width:100%;
-  margin-top:25px;
-  padding:15px;
-  border-radius:14px;
-  border:none;
-  background:linear-gradient(90deg,#facc15,#f97316);
-  color:#000;
-  font-weight:700;
-  font-size:15px;
-  cursor:pointer;
-}
-
-.calc-btn:hover{
-  transform:scale(1.02);
+width:100%;
+margin-top:20px;
+padding:14px;
+border:none;
+border-radius:12px;
+background:linear-gradient(90deg,#facc15,#f97316);
+font-weight:bold;
+cursor:pointer;
 }
 
 .result{
-  margin-top:25px;
-  font-size:16px;
-  line-height:1.9;
-  font-weight:700;
-  text-align:right;
+margin-top:20px;
+text-align:right;
+font-weight:700;
 }
 
 .profit{color:#22c55e;}
 .loss{color:#ef4444;}
 
 .chart-section{
-  margin-top:60px;
+margin-top:40px;
 }
 
 .tradingview-widget-container{
-  border-radius:18px;
-  overflow:hidden;
-  box-shadow:0 20px 60px rgba(0,0,0,0.6);
+border-radius:14px;
+overflow:hidden;
 }
 
-/* SHARE BUTTONS */
 .share-box{
-  margin-top:20px;
-  display:flex;
-  gap:10px;
+margin-top:20px;
+display:flex;
+gap:10px;
 }
 
 .share-btn{
-  flex:1;
-  padding:12px;
-  border-radius:10px;
-  text-align:center;
-  font-weight:600;
-  text-decoration:none;
-  color:#fff;
+flex:1;
+padding:12px;
+border-radius:10px;
+text-align:center;
+text-decoration:none;
+color:#fff;
+font-weight:600;
 }
 
-.x-btn{
-  background:#000;
-}
+.x-btn{background:#000;}
+.fb-btn{background:#1877f2;}
 
-.fb-btn{
-  background:#1877f2;
-}
-
-/* FOOTER */
 .footer-info{
-  margin-top:80px;
-  padding:40px 20px;
-  text-align:center;
-  font-size:14px;
-  line-height:1.8;
-  opacity:0.85;
-}
-
-.footer-info a{
-  color:#facc15;
-  font-weight:600;
-  text-decoration:none;
-}
-
-.footer-info a:hover{
-  text-decoration:underline;
+margin-top:80px;
+text-align:center;
+font-size:14px;
+opacity:0.85;
 }
 </style>
 </head>
@@ -177,23 +143,18 @@ input:focus,select:focus{
 <h1>Bitcoin Live Price & Profit Calculator</h1>
 
 <div class="card">
-  <div class="price-box">BTC (USD): <span id="btcUsd">Loading...</span></div>
-  <div class="price-box">BTC (IDR): <span id="btcIdr">Loading...</span></div>
-  <div class="small">Auto update every 60 seconds</div>
+<div class="price-box">BTC (USD): <span id="btcUsd">Loading...</span></div>
+<div class="price-box">BTC (IDR): <span id="btcIdr">Loading...</span></div>
+<div class="small">Auto update every 60 seconds</div>
 </div>
 
-<!-- CTA Bitget (HIGH CTR AREA) -->
-<p style="text-align:center; margin-top:15px;">
-Want to trade Bitcoin easily? Use a trusted platform below 👇
-</p>
-
-<div style="text-align:center; margin:20px 0;">
-  <a href="https://www.bitgetapp.com/id/referral/register?clacCode=GD1PSJUJ&from=%2Fid%2Fevents%2Freferral-all-program&source=events&utmSource=PremierInviter" 
-     target="_blank" rel="nofollow sponsored"
-     style="background:#f0b90b; color:#000; padding:14px 24px; 
-     text-decoration:none; font-weight:bold; border-radius:6px; display:inline-block;">
-     Start Trading Bitcoin Now
-  </a>
+<!-- CTA -->
+<div style="text-align:center;margin:20px 0;">
+<a href="https://www.bitgetapp.com/id/referral/register?clacCode=GD1PSJUJ"
+target="_blank" rel="nofollow sponsored"
+style="background:#f0b90b;padding:14px 24px;border-radius:6px;color:#000;font-weight:bold;text-decoration:none;">
+Start Trading Bitcoin Now
+</a>
 </div>
 
 <h2>Calculate Your Profit</h2>
@@ -202,18 +163,18 @@ Want to trade Bitcoin easily? Use a trusted platform below 👇
 
 <label>Select Currency</label>
 <select id="currency">
-  <option value="usd">USD ($)</option>
-  <option value="idr">IDR (Rp)</option>
+<option value="usd">USD ($)</option>
+<option value="idr">IDR (Rp)</option>
 </select>
 
 <label>Investment Amount</label>
 <input type="text" id="modal" oninput="formatInput(this)">
 
 <label>Buy Price</label>
-<input type="text" id="buyPrice" oninput="formatInput(this)" placeholder="Enter your buy price">
+<input type="text" id="buyPrice" oninput="formatInput(this)">
 
 <label>Current / Sell Price</label>
-<input type="text" id="currentPrice" oninput="formatInput(this)" placeholder="Enter current price">
+<input type="text" id="currentPrice" oninput="formatInput(this)">
 
 <button onclick="calculate()" class="calc-btn">Calculate Profit</button>
 
@@ -226,134 +187,73 @@ Want to trade Bitcoin easily? Use a trusted platform below 👇
 
 </div>
 
-<!-- MGID (POSISI AMAN & VIEWABLE) -->
+<!-- MGID -->
 <div style="margin:30px 0;">
-  <div data-type="_mgwidget" data-widget-id="1977794"></div>
-  <script>(function(w,q){w[q]=w[q]||[];w[q].push(["_mgc.load"])})(window,"_mgq");</script>
+<div data-type="_mgwidget" data-widget-id="1977794"></div>
+<script>(function(w,q){w[q]=w[q]||[];w[q].push(["_mgc.load"])})(window,"_mgq");</script>
 </div>
 
+<!-- CHART FIX -->
 <div class="chart-section">
 <h2>Bitcoin Live Chart</h2>
 
-<div class="tradingview-widget-container"></div>
+<div class="tradingview-widget-container">
+<div id="tradingview_btc" style="height:500px;"></div>
 </div>
 
+</div>
 
-
-<!-- MGID WIDGET -->
+<!-- MGID 2 -->
 <div style="margin-top:50px;">
 <div data-type="_mgwidget" data-widget-id="1967128"></div>
-<script>
-(function(w,q){
-w[q]=w[q]||[];
-w[q].push(["_mgc.load"])
-})(window,"_mgq");
-</script>
+<script>(function(w,q){w[q]=w[q]||[];w[q].push(["_mgc.load"])})(window,"_mgq");</script>
 </div>
-<div style="max-width:500px;margin:50px auto;padding:20px;background:#0f172a;border-radius:10px;text-align:center;">
 
-<h3 style="margin-bottom:10px;">Support CryptoKita</h3>
+<!-- SUPPORT -->
+<div style="max-width:500px;margin:50px auto;text-align:center;">
 
-<p style="font-size:13px;opacity:0.8;margin-bottom:20px;">
-If this Bitcoin dashboard helps you, you can support the project with a small crypto tip.
+<h3>Support CryptoKita</h3>
+
+<p style="font-size:13px;opacity:0.8;">
+If this helps, support with crypto tip
 </p>
 
-<div style="display:flex;justify-content:center;gap:20px;flex-wrap:wrap;">
+<b>BTC</b><br>
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=bc1qsrvsy2p3540d48kdel6huj4984332kefmsd99t">
+<p id="btc-address">bc1qsrvsy2p3540d48kdel6huj4984332kefmsd99t</p>
+<button onclick="copyBTC()">Copy</button>
 
-<div>
+<br><br>
 
-<b>BTC</b>
+<b>BNB</b><br>
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=0x992F05564dBEb7855d60B526C561016BbB44cbA7">
+<p id="bnb-address">0x992F05564dBEb7855d60B526C561016BbB44cbA7</p>
+<button onclick="copyBNB()">Copy</button>
 
-<img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=bc1qsrvsy2p3540d48kdel6huj4984332kefmsd99t"
-alt="Bitcoin BTC wallet QR code donation"
-style="margin:8px 0;">
-
-<div id="btc-address" style="font-size:11px;word-break:break-all;">
-bc1qsrvsy2p3540d48kdel6huj4984332kefmsd99t
-</div>
-
-<button onclick="copyBTC()" style="margin-top:6px;font-size:11px;padding:5px 10px;background:#f7931a;border:none;border-radius:5px;color:white;cursor:pointer;">
-Copy
-</button>
+<p id="copy-msg"></p>
 
 </div>
 
-
-<div style="margin-top:20px;">
-
-<b>BNB</b>
-
-<img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=0x992F05564dBEb7855d60B526C561016BbB44cbA7"
-alt="BNB wallet QR code donation"
-style="margin:8px 0;">
-
-<div id="bnb-address" style="font-size:11px;word-break:break-all;">
-0x992F05564dBEb7855d60B526C561016BbB44cbA7
+<div class="footer-info">
+<p>Real-time BTC price, calculator & chart powered by CoinGecko & TradingView.</p>
 </div>
-
-<button onclick="copyBNB()" style="margin-top:6px;font-size:11px;padding:5px 10px;background:#f3ba2f;border:none;border-radius:5px;color:black;cursor:pointer;">
-Copy
-</button>
-
-</div>
-</div>
-
-<p id="copy-msg" style="font-size:12px;margin-top:10px;"></p>
 
 </div>
 
 <script>
 function copyBTC(){
-navigator.clipboard.writeText("bc1qsrvsy2p3540d48kdel6huj4984332kefmsd99t");
-document.getElementById("copy-msg").innerHTML="BTC copied 👍";
+navigator.clipboard.writeText(document.getElementById("btc-address").innerText);
+document.getElementById("copy-msg").innerText="BTC copied!";
 }
 
 function copyBNB(){
-navigator.clipboard.writeText("0x992F05564dBEb7855d60B526C561016BbB44cbA7");
-document.getElementById("copy-msg").innerHTML="BNB copied 👍";
+navigator.clipboard.writeText(document.getElementById("bnb-address").innerText);
+document.getElementById("copy-msg").innerText="BNB copied!";
 }
-</script>
-
-<div class="footer-info">
-
-<p>
-This Bitcoin price tracker provides real-time BTC prices in USD and IDR,
-along with a profit calculator to estimate potential gains or losses.
-</p>
-
-<p>
-For deeper cryptocurrency education visit:
-<br>
-<a href="https://www.cryptokita.com" target="_blank">
-https://www.cryptokita.com
-</a>
-</p>
-
-<p>
-Data powered by CoinGecko API & TradingView charts.
-</p>
-
-</div>
-
-</div>
-
-<script>
-
-let liveUSD=0;
-let liveIDR=0;
 
 function formatInput(input){
-
-let currency=document.getElementById("currency").value;
-
-let value=input.value.replace(/\D/g,'');
-
-if(!value){input.value="";return;}
-
-input.value=currency==="usd"
-? Number(value).toLocaleString("en-US")
-: Number(value).toLocaleString("id-ID");
-
+let val=input.value.replace(/\D/g,'');
+input.value=Number(val).toLocaleString();
 }
 
 function getNumber(id){
@@ -361,62 +261,37 @@ return Number(document.getElementById(id).value.replace(/[^0-9]/g,''))||0;
 }
 
 function calculate(){
-
-const currency=document.getElementById("currency").value;
-
 const modal=getNumber("modal");
 const buy=getNumber("buyPrice");
 const current=getNumber("currentPrice");
 
 if(!modal||!buy||!current)return;
 
-const btcAmount=modal/buy;
-const currentValue=btcAmount*current;
-const profit=currentValue-modal;
-
-const percent=((profit/modal)*100).toFixed(2);
-
-const symbol=currency==="usd"?"$":"Rp ";
-const locale=currency==="usd"?"en-US":"id-ID";
-
-const cls=profit>=0?"profit":"loss";
+const btc=modal/buy;
+const val=btc*current;
+const profit=val-modal;
 
 document.getElementById("output").innerHTML=
-"BTC Owned: "+btcAmount.toFixed(6)+" BTC<br>"+
-"Current Value: "+symbol+currentValue.toLocaleString(locale)+"<br>"+
-"<span class='"+cls+"'>Profit / Loss: "+symbol+profit.toLocaleString(locale)+"</span><br>"+
-"Return: "+percent+"%";
+"BTC: "+btc.toFixed(6)+"<br>"+
+"Value: "+val.toLocaleString()+"<br>"+
+"<span class='"+(profit>=0?"profit":"loss")+"'>P/L: "+profit.toLocaleString()+"</span>";
 
-let shareText="Check your Bitcoin profit with this calculator!";
-let shareUrl=window.location.href;
+let url=window.location.href;
 
-document.getElementById("shareX").href=
-"https://x.com/intent/tweet?text="+encodeURIComponent(shareText)+"&url="+encodeURIComponent(shareUrl);
-
-document.getElementById("shareFB").href=
-"https://www.facebook.com/sharer/sharer.php?u="+encodeURIComponent(shareUrl);
-
+document.getElementById("shareX").href="https://x.com/intent/tweet?url="+url;
+document.getElementById("shareFB").href="https://www.facebook.com/sharer/sharer.php?u="+url;
 }
 
 async function fetchBTC(){
-
 const r=await fetch("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd,idr");
-
 const d=await r.json();
 
-liveUSD=d.bitcoin.usd;
-liveIDR=d.bitcoin.idr;
-
-document.getElementById("btcUsd").innerText="$"+liveUSD.toLocaleString("en-US");
-
-document.getElementById("btcIdr").innerText="Rp "+liveIDR.toLocaleString("id-ID");
-
+document.getElementById("btcUsd").innerText="$"+d.bitcoin.usd.toLocaleString();
+document.getElementById("btcIdr").innerText="Rp "+d.bitcoin.idr.toLocaleString();
 }
 
 fetchBTC();
-
 setInterval(fetchBTC,60000);
-
 </script>
 
 <script src="https://s3.tradingview.com/tv.js"></script>
@@ -425,16 +300,12 @@ setInterval(fetchBTC,60000);
 new TradingView.widget({
 container_id:"tradingview_btc",
 width:"100%",
-height:600,
+height:500,
 symbol:"BINANCE:BTCUSDT",
 interval:"240",
 theme:"dark",
 style:"1",
-locale:"en",
-toolbar_bg:"#0f172a",
-enable_publishing:false,
-hide_legend:false,
-studies:["Volume@tv-basicstudies"]
+locale:"en"
 });
 </script>
 
